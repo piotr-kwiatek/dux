@@ -1,129 +1,131 @@
-.container {
-  padding: 0 2rem;
+.title {
+  text-align: center;
+  font-size: 4.2rem;
+  letter-spacing: 2px;
+  padding-bottom: calc(var(--core-size) + 10px);
+  margin: 25px 0;
+  position: relative;
 }
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+.title::after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background-color: var(--color-primary);
+  border-radius: calc(var(--core-size) + 10px);
+}
+
+.root {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  padding-left: var(--core-size);
+  padding-right: var(--core-size);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list > li {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
+  padding-left: var(--core-size);
+  padding-right: var(--core-size);
+  margin-bottom: var(--core-size);
+  padding-top: calc(var(--core-size) + 10px);
+  padding-bottom: calc(var(--core-size) + 10px);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
+}
+
+.link {
+  color: var(--color-primary);
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2.4rem;
+  line-height: 30px;
+  padding: 5px;
+}
+
+.details {
+  white-space: nowrap;
+  display: block;
+}
+
+.languages {
+  display: inline-block;
+  vertical-align: middle;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.languages > li {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  line-height: 30px;
+  white-space: nowrap;
+  text-align: center;
+  background-color: var(--color-primary);
+  color: var(--background-primary);
+}
+
+.fileDownload {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 5px;
+}
+
+.fileDownload svg {
+  width: 30px;
+  height: 30px;
 }
 
 .footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+  padding-top: var(--core-size);
+  padding-bottom: var(--core-size);
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-}
-
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+@media screen and (min-width: 1024px) {
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  .list::after {
+    content: "";
+    flex: auto;
+  }
+  .list > li {
+    width: calc(50% - 8px);
+  }
+  .list > li:nth-child(odd) {
+    margin-right: calc(var(--core-size) + 1px);
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
-  }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
+@media screen and (max-width: 479px) {
+  .list > li {
+    padding-top: var(--core-size);
+    padding-bottom: var(--core-size);
+    display: block;
   }
 }
